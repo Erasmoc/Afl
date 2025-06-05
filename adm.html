@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel ADM</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <div id="loginContainer">
+    <h2>Login ADM</h2>
+    <input type="password" id="senhaInput" placeholder="Digite a senha">
+    <button onclick="verificarSenha()">Entrar</button>
+  </div>
+
+  <div id="painelADM" style="display:none;">
+    <h1>Painel do Administrador</h1>
+    <button onclick="mostrarConfiguracoes()">Configurações</button>
+    <button onclick="gerarBilhetes()">Gerar Bilhetes</button>
+    <button onclick="apagarBilhetes()">Apagar Bilhetes</button>
+    <button onclick="publicarBilhetes()">Publicar</button>
+    <input type="text" id="filtroInput" placeholder="Pesquisar número ou milhar" oninput="filtrarBilhetes()">
+    <ul id="listaBilhetes"></ul>
+
+    <div id="configuracoes" style="display:none;">
+      <h3>Configurações</h3>
+      <label>Quantidade de bilhetes:</label>
+      <input type="number" id="qtdBilhetesInput" value="1000"><br>
+      <label>Valor por bilhete (R$):</label>
+      <input type="number" id="valorBilheteInput" value="2" step="0.01"><br>
+      <button onclick="aplicarConfiguracoes()">Aplicar</button>
+    </div>
+  </div>
+
+  <script src="inscription/adm.js"></script>
+</body>
+</html>
